@@ -1,5 +1,6 @@
 import React from 'react';
-import { Flex, Card, Image, Accordion, AccordionItem, AccordionButton, AccordionPanel, Box, Spacer, Link, Grid, GridItem, Text } from '@chakra-ui/react';
+import { Flex, Card, Image, Box, Spacer } from '@chakra-ui/react';
+import ProductSize from './ProductSize';
 import { useDispatch, useSelector } from 'react-redux';
 import { setSelectedColor } from '../redux/colorSlice';
 import '../styles/ProductDetail.scss';
@@ -62,32 +63,7 @@ const ProductDetail = ({ productId, colors, onColorChange }) => {
         </Box>
         <Spacer />
         <Box>
-          <Accordion allowToggle>
-            <AccordionItem className="reset-style">
-              <h2>
-                <AccordionButton>Größen</AccordionButton>
-              </h2>
-              <AccordionPanel className="custom-accordion-panel">
-                <Grid templateColumns='repeat(5, 1fr)' gap={6}>
-                  <GridItem w='100%'>
-                    <Link><Text as='b'>XS</Text></Link>
-                  </GridItem>
-                  <GridItem w='100%'>
-                    <Link><Text as='b'>S</Text></Link>
-                  </GridItem>
-                  <GridItem w='100%'>
-                    <Link><Text as='b'>M</Text></Link>
-                  </GridItem>
-                  <GridItem w='100%'>
-                    <Link><Text as='b'>XL</Text></Link>
-                  </GridItem>
-                  <GridItem w='100%'>
-                    <Link><Text as='b'>XXL</Text></Link>
-                  </GridItem>
-                </Grid>
-              </AccordionPanel>
-            </AccordionItem>
-          </Accordion>
+          <ProductSize />
         </Box>
       </Flex>
     </Flex>
