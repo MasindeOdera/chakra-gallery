@@ -63,7 +63,7 @@ const ProductDetail = ({ productId, colors, onColorChange }) => {
         </Box>
         <Spacer />
         <Box>
-          <ProductSize />
+          <ProductSize productId={productId} />
         </Box>
       </Flex>
     </Flex>

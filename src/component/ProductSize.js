@@ -1,7 +1,7 @@
 import React from 'react';
 import { Accordion, AccordionItem, AccordionButton, AccordionPanel, Grid, GridItem, Link, Text } from '@chakra-ui/react';
 
-const ProductSize = () => {
+const ProductSize = ({ productId }) => {
   return (
     <Accordion allowToggle>
       <AccordionItem className="reset-style">
@@ -14,13 +14,21 @@ const ProductSize = () => {
               <Link><Text as='b'>XS</Text></Link>
             </GridItem>
             <GridItem w='100%'>
-              <Link><Text as='b'>S</Text></Link>
+              {productId === 1 ? (
+                <Link><Text as='s'>S</Text></Link> // Apply strikethrough for first product.
+              ) : (
+                <Link><Text as='b'>S</Text></Link>
+              )}
             </GridItem>
             <GridItem w='100%'>
               <Link><Text as='b'>M</Text></Link>
             </GridItem>
             <GridItem w='100%'>
-              <Link><Text as='b'>XL</Text></Link>
+              {productId === 3 ? (
+                <Link><Text as='s'>XL</Text></Link>
+              ) : (
+                <Link><Text as='b'>XL</Text></Link>
+              )}
             </GridItem>
             <GridItem w='100%'>
               <Link><Text as='b'>XXL</Text></Link>
