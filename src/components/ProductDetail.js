@@ -1,11 +1,12 @@
 import React from 'react';
 import { Flex, Card, Image, Box, Spacer } from '@chakra-ui/react';
 import ProductSize from './ProductSize';
+import ProductPrice from './ProductPrice';
 import { useDispatch, useSelector } from 'react-redux';
 import { setSelectedColor } from '../redux/colorSlice';
 import '../styles/ProductDetail.scss';
 
-const ProductDetail = ({ productId, colors, onColorChange }) => {
+const ProductDetail = ({ productId, colors, price1, price2, onColorChange }) => {
   const imageUrls = {
     GreyBlue: '/img/image1.jpg',
     Black: '/img/image1-2.webp',
@@ -39,7 +40,7 @@ const ProductDetail = ({ productId, colors, onColorChange }) => {
   const selectedImageUrl = imageUrls[selectedColor];
 
   return (
-    <Flex direction="column" boxSize="270px" h="460px" p="2" m="2" shadow="md">
+    <Flex direction="column" boxSize="270px" h="480px" p="2" m="2" shadow="md">
       <Image src={selectedImageUrl} alt="Product" boxSize="270px" h="406px" mt="2" mb="2"/>
       <Flex>
         <Box className="color-selection">
@@ -66,6 +67,7 @@ const ProductDetail = ({ productId, colors, onColorChange }) => {
           <ProductSize productId={productId} />
         </Box>
       </Flex>
+      <ProductPrice price1={price1} price2={price2} /> 
     </Flex>
   );
 };
