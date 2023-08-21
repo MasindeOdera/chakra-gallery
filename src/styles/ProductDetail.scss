@@ -1,0 +1,22 @@
+.image-selection {
+  border-radius: 50px !important;
+  width: 18px;
+  height: 18px;
+
+  &.active {
+    border: solid #92aac7 2px;
+  }
+}
+
+.custom-accordion-panel {
+  transform: translate(-66%, -150%);
+  height: 68px;
+  width: 258px;
+  margin-bottom: -1px;
+  position: absolute;
+  background-color: #ffffff;
+}
+
+.reset-style {
+  border: unset !important;
+}
